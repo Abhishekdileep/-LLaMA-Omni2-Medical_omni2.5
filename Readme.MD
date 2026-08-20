@@ -17,10 +17,12 @@ The Gradio setup is already mentioned in the LLaMA-Omni2 repository.
 ---
 
 ## Model Weights
-
+I haven't put that folder in here 
 The model weights are stored in `models/`. For example:
 
 ```text
+Please see how the LLaMA-Omni2's / CosyVoice installation and weights put it 
+
 models/
 ├── LLaMA-Omni2-7B-Bilingual/
 └── cosy2_decoder/
@@ -28,14 +30,14 @@ models/
 
 ---
 
-## Inference
+## Inference - the actual "MY PERSONAL Contribution" 
 
 ### Individual audio files
 
 Use `inference.py`:
 
 ```bash
-python inference.py \
+python LLaMA-Omni2-main/inference.py \
     --model-path ./models/LLaMA-Omni2-7B-Bilingual/ \
     --vocoder-dir ./models/cosy2_decoder/ \
     --audio Recording.wav Recording_2.wav \
@@ -44,10 +46,10 @@ python inference.py \
 
 ### Multiple audio files
 
-Use `llama_omni2/run.sh`:
+Use `LLaMA-Omni2-main/run.sh`:
 
 ```bash
-bash llama_omni2/run.sh
+bash LLaMA-Omni2-main/run.sh
 ```
 
 Provide the exact paths required by the script.
