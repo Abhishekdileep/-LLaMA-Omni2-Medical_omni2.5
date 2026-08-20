@@ -1,0 +1,20 @@
+2026-08-18 08:34:39 | ERROR | stderr | Traceback (most recent call last):
+2026-08-18 08:34:39 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+2026-08-18 08:34:39 | ERROR | stderr |     return _run_code(code, main_globals, None,
+2026-08-18 08:34:39 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/runpy.py", line 86, in _run_code
+2026-08-18 08:34:39 | ERROR | stderr |     exec(code, run_globals)
+2026-08-18 08:34:39 | ERROR | stderr |   File "/DATA/carer.ai/LLaMA-Omni2-main/llama_omni2/serve/gradio_web_server.py", line 35, in <module>
+2026-08-18 08:34:39 | ERROR | stderr |     prompt_speech_16k = load_wav(prompt_speech, 16000)
+2026-08-18 08:34:39 | ERROR | stderr |   File "/DATA/carer.ai/LLaMA-Omni2-main/cosyvoice/utils/file_utils.py", line 42, in load_wav
+2026-08-18 08:34:39 | ERROR | stderr |     speech, sample_rate = torchaudio.load(wav)
+2026-08-18 08:34:39 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/torchaudio/_backend/utils.py", line 205, in load
+2026-08-18 08:34:39 | ERROR | stderr |     return backend.load(uri, frame_offset, num_frames, normalize, channels_first, format, buffer_size)
+2026-08-18 08:34:39 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/torchaudio/_backend/soundfile.py", line 27, in load
+2026-08-18 08:34:39 | ERROR | stderr |     return soundfile_backend.load(uri, frame_offset, num_frames, normalize, channels_first, format)
+2026-08-18 08:34:39 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/torchaudio/_backend/soundfile_backend.py", line 221, in load
+2026-08-18 08:34:39 | ERROR | stderr |     with soundfile.SoundFile(filepath, "r") as file_:
+2026-08-18 08:34:39 | ERROR | stderr |   File "/home/teaching/.local/lib/python3.10/site-packages/soundfile.py", line 690, in __init__
+2026-08-18 08:34:39 | ERROR | stderr |     self._file = self._open(file, mode_int, closefd)
+2026-08-18 08:34:39 | ERROR | stderr |   File "/home/teaching/.local/lib/python3.10/site-packages/soundfile.py", line 1265, in _open
+2026-08-18 08:34:39 | ERROR | stderr |     raise LibsndfileError(err, prefix="Error opening {0!r}: ".format(self.name))
+2026-08-18 08:34:39 | ERROR | stderr | soundfile.LibsndfileError: Error opening 'llama_omni2/inference/prompt_en.wav': System error.
