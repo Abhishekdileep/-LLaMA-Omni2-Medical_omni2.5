@@ -74,14 +74,23 @@ To change the accent, edit the prompt input in:
 
 ---
 
-### Training 
+## Training 
 
 #### Stage 1 -> Frozen whisper + speech adaptor (🔥) + LLM (Omni2.5) 🔥
 
-- `python train_stage1.py --output_dir ./models/stage1_output --num_train_epochs 3 --per_device_train_batch_size 1 --learning_rate 5e-5 --save_steps 500 --bf16 True`
+- `python `LLaMA-Omni2-main/llama_omni2/train_stage1.py --output_dir ./models/stage1_output --num_train_epochs 3 --per_device_train_batch_size 1 --learning_rate 5e-5 --save_steps 500 --bf16 True`
 
 This code is just to run the stage one , explained in the training section of the paper . Please refer the original paper for info 
-here we are taking the frozen whisper , and speech adaptor + LLM , (since i old have 24gb gpu , i only finetune last layer of the owen2.5 7b bilingual model on float16 precision) 
+here we are taking the frozen whisper , and speech adaptor + LLM , (since i old have 24gb gpu , i only finetune last layer of the omni2.5 7b bilingual model on float16 precision) 
+
+#### Stage 2 -> TTS Qwen2.5 0.5b Text model(🔥) 
+- `python `LLaMA-Omni2-main/llama_omni2/train_stage1b.py --data_path examples/stage1b_data.json --output_dir models/stage_1b/ --bf16 True --num_train_epochs 10 
+   --save_steps 500 --logging_steps 10`
+
+
+This code is to run the TTS model. The training inputs are similar to answer.json (question / output_id pairs) --> we need this as a text response pair
+ie text reponse to speech unit mapping , which cosyvoice2 takes and makes into audio waveform
+we initialize with omni2.5 0.5b weights, again as per paper, plus since i don't have a big gpu we use the omni2.5 last layer  
 
 
 ## Accuracy, Inference Time and Mel-Spectrogram Analysis
