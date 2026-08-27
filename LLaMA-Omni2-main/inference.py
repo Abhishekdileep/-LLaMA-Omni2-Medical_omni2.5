@@ -119,7 +119,7 @@ class OmniModel:
         os.remove("unit_vocab.txt")
         self.unit_tokenizer = tokenizer
 
-    def load_speech(self, path, add_noise=True, snr_db=-5):
+    def load_speech(self, path, add_noise=False, snr_db=-5):
         speech = whisper.load_audio(path)
         speech = whisper.pad_or_trim(speech)
         speech = torch.from_numpy(speech)
@@ -178,9 +178,15 @@ class OmniModel:
         """
         messages = []
         speech_list = []
+        MCQ_INSTRUCTION = (
+            "Answer the multiple-choice question. "
+            "Output only the correct option letter and answer. "
+            "Provide explanations or reasoning. "
+            "Format: A. answer, explaination. "
+        )
         for i, turn in enumerate(history):
             if i % 3 == 0:
-                messages.append({"role": "user", "content": DEFAULT_SPEECH_TOKEN})
+                messages.append({"role": "user", "content": DEFAULT_SPEECH_TOKEN + "\n" + MCQ_INSTRUCTION})
                 speech_list.append(self.load_speech(turn["content"]["path"]))
             elif i % 3 == 1:
                 messages.append({"role": "assistant", "content": turn["content"]})

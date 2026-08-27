@@ -1,0 +1,225 @@
+import pandas as pd
+import numpy as np
+
+
+
+# np.array
+a = np.array([1, 2, 3, 4])
+print("np.array:", a)
+
+# np.zeros
+b = np.zeros((2, 3))
+print("\nnp.zeros:\n", b)
+
+# np.ones
+c = np.ones((2, 3))
+print("\nnp.ones:\n", c)
+
+# np.arange
+d = np.arange(0, 10, 2)
+print("\nnp.arange:", d)
+
+# np.linspace
+e = np.linspace(0, 1, 5)
+print("\nnp.linspace:", e)
+
+rng = np.random.default_rng(42)
+
+X = rng.normal(size=(3, 4))
+
+print("X:\n", X)
+
+print("Shape:", X.shape)
+print("Dtype:", X.dtype)
+print("Number of dimensions:", X.ndim)
+
+X_reshaped = X.reshape(4, 3)
+
+print("\nReshaped X:\n", X_reshaped)
+print("New shape:", X_reshaped.shape)
+
+X_auto = X.reshape(2, -1)
+
+print(X_auto)
+print("Shape:", X_auto.shape)
+
+X = np.arange(1, 13).reshape(3, 4)
+
+print("X:\n", X)
+
+print("\nSum with axis=0:", X.sum(axis=0))
+print("Sum with axis=1:", X.sum(axis=1))
+
+# Indexing
+print("Element at row 0, column 1:", X[0, 1])
+
+# Slicing
+print("\nFirst two rows:\n", X[:2])
+
+# Boolean masking
+print("\nElements greater than 0:", X[X > 0])
+
+# Fancy indexing
+indices = np.array([0, 2])
+print("\nRows 0 and 2:\n", X[indices])
+
+
+X = rng.normal(size=(3, 4))
+
+column_means = X.mean(axis=0)
+
+print("X shape:", X.shape)
+print("Column means shape:", column_means.shape)
+
+X_centered = X - column_means
+
+print("\nColumn-centered X:\n", X_centered)
+
+def column_stats(X):
+    """
+    Return mean, standard deviation, minimum and maximum
+    for each column of a 2-D array.
+    """
+    mean = X.mean(axis=0)
+    std = X.std(axis=0)
+    minimum = X.min(axis=0)
+    maximum = X.max(axis=0)
+
+    return mean, std, minimum, maximum
+
+X_test = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+
+mean, std, minimum, maximum = column_stats(X_test)
+
+print("Mean:", mean)
+print("Standard deviation:", std)
+print("Minimum:", minimum)
+print("Maximum:", maximum)
+
+print("\nShapes:")
+print(mean.shape, std.shape, minimum.shape, maximum.shape)
+
+def mask_values(X, t):
+    """
+    Replace values greater than t with t in a copy of X
+    and return the row-wise count of values greater than t.
+    """
+    X_copy = X.copy()
+
+    mask = X_copy > t
+    X_copy[mask] = t
+
+    row_counts = mask.sum(axis=1)
+
+    return X_copy, row_counts
+
+X_test = np.array([
+    [1, 5, 8],
+    [3, 2, 10],
+    [7, 4, 6]
+])
+
+t = 5
+
+X_original = X_test.copy()
+
+X_masked, counts = mask_values(X_test, t)
+
+print("Original X:\n", X_test)
+
+print("\nMasked X:\n", X_masked)
+
+print("\nCount of values greater than", t, "in each row:")
+print(counts)
+
+print("\nOriginal X unchanged:", np.array_equal(X_test, X_original))
+
+def pairwise_distances(A, B):
+    """
+    Return the Euclidean distance between every row of A
+    and every row of B.
+    """
+    differences = A[:, np.newaxis, :] - B[np.newaxis, :, :]
+    distances = np.sqrt(np.sum(differences ** 2, axis=2))
+
+    return distances
+
+A = np.array([
+    [0, 0],
+    [3, 4],
+    [1, 1]
+])
+
+B = np.array([
+    [0, 0],
+    [3, 4]
+])
+
+D = pairwise_distances(A, B)
+
+print("Distance matrix:\n", D)
+print("Shape:", D.shape)
+
+def pairwise_distances_naive(A, B):
+    n = A.shape[0]
+    m = B.shape[0]
+
+    D = np.zeros((n, m))
+
+    for i in range(n):
+        for j in range(m):
+            D[i, j] = np.sqrt(np.sum((A[i] - B[j]) ** 2))
+
+    return D
+
+D_vectorized = pairwise_distances(A, B)
+D_naive = pairwise_distances_naive(A, B)
+
+print("Vectorized result:\n", D_vectorized)
+
+print("\nNaive result:\n", D_naive)
+
+print("\nResults match:", np.allclose(D_vectorized, D_naive))
+
+closest_indices = np.argmin(D_vectorized, axis=1)
+
+print("Closest row of B for each row of A:")
+print(closest_indices)
+
+np.argmin(D_vectorized, axis=1)
+
+a = np.array([1, 2, 3])
+print("dtype:", a.dtype)
+
+print("Normal division:", a / 2)
+
+a = np.array([1, 2, 3])
+
+print("Shape of a:", a.shape)
+print("Shape of a[:, None]:", a[:, None].shape)
+
+a = np.array([1, 2, 3, 4])
+
+b = a[:2]
+
+b[0] = 99
+
+print("b:", b)
+print("a:", a)
+
+a = np.array([1, 2, 3, 4])
+
+b = a[:2].copy()
+
+b[0] = 99
+
+print("b:", b)
+print("a:", a)
+
+np.allclose(D_vectorized, D_naive)
+
+D_vectorized == D_naive

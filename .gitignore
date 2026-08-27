@@ -1,0 +1,25 @@
+# Audio files
+*.wav
+
+# PyTorch model/checkpoint files
+*.pt
+*.pth
+*.ckpt
+
+# JSON files
+*.json
+
+# Common weight/model directories
+weights/
+checkpoints/
+models/
+
+# Optional: ignore nested versions too
+**/*.wav
+**/*.pt
+**/*.pth
+**/*.ckpt
+**/*.json
+
+token
+LLaMA-Omni2-main/medqa_in/zero_shot_*/inference_time.csv

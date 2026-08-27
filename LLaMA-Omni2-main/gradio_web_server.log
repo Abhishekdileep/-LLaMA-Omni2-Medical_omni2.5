@@ -1,0 +1,386 @@
+2026-08-25 18:37:14 | INFO | gradio_web_server | args: Namespace(host='0.0.0.0', port=8000, controller_url='http://localhost:10000', concurrency_count=16, share=False, vocoder_dir='models/cosy2_decoder', hop_len=10, load_onnx=False)
+2026-08-25 18:37:27 | ERROR | stderr | /DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/diffusers/models/lora.py:393: FutureWarning: `LoRACompatibleLinear` is deprecated and will be removed in version 1.0.0. Use of `LoRACompatibleLinear` is deprecated. Please switch to PEFT backend by installing PEFT: `pip install peft`.
+2026-08-25 18:37:27 | ERROR | stderr |   deprecate("LoRACompatibleLinear", "1.0.0", deprecation_message)
+2026-08-25 18:37:28 | ERROR | stderr | /DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:28: UserWarning: torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.
+2026-08-25 18:37:28 | ERROR | stderr |   warnings.warn("torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.")
+2026-08-25 18:37:28 | ERROR | stderr | /DATA/carer.ai/LLaMA-Omni2-main/cosyvoice/dataset/processor.py:24: UserWarning: torchaudio._backend.set_audio_backend has been deprecated. With dispatcher enabled, this function is no-op. You can remove the function call.
+2026-08-25 18:37:28 | ERROR | stderr |   torchaudio.set_audio_backend('soundfile')
+2026-08-25 18:37:33 | ERROR | stderr | 2026-08-25 18:37:33,211 WETEXT INFO found existing fst: /DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/tn/zh_tn_tagger.fst
+2026-08-25 18:37:33 | ERROR | stderr | 2026-08-25 18:37:33,212 WETEXT INFO                     /DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/tn/zh_tn_verbalizer.fst
+2026-08-25 18:37:33 | ERROR | stderr | 2026-08-25 18:37:33,212 WETEXT INFO skip building fst for zh_normalizer ...
+2026-08-25 18:37:33 | ERROR | stderr | 2026-08-25 18:37:33,466 WETEXT INFO found existing fst: /DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/tn/en_tn_tagger.fst
+2026-08-25 18:37:33 | ERROR | stderr | 2026-08-25 18:37:33,466 WETEXT INFO                     /DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/tn/en_tn_verbalizer.fst
+2026-08-25 18:37:33 | ERROR | stderr | 2026-08-25 18:37:33,466 WETEXT INFO skip building fst for en_normalizer ...
+2026-08-25 18:37:37 | INFO | gradio_web_server | Namespace(host='0.0.0.0', port=8000, controller_url='http://localhost:10000', concurrency_count=16, share=False, vocoder_dir='models/cosy2_decoder', hop_len=10, load_onnx=False)
+2026-08-25 18:37:37 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:37:37 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:37:37 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /refresh_all_workers HTTP/1.1" 200 4
+2026-08-25 18:37:37 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /refresh_all_workers HTTP/1.1" 200 4
+2026-08-25 18:37:37 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:37:37 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:37:37 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /list_models HTTP/1.1" 200 13
+2026-08-25 18:37:37 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /list_models HTTP/1.1" 200 13
+2026-08-25 18:37:37 | INFO | gradio_web_server | Models: []
+2026-08-25 18:37:37 | DEBUG | asyncio | Using selector: EpollSelector
+2026-08-25 18:37:37 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): huggingface.co:443
+2026-08-25 18:37:37 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): huggingface.co:443
+2026-08-25 18:37:37 | DEBUG | httpcore.connection | connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2026-08-25 18:37:38 | ERROR | stderr | /DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py:226: UserWarning: The value passed into gr.Dropdown() is not in the list of choices. Please update the list of choices to include:  or set allow_custom_value=True.
+2026-08-25 18:37:38 | ERROR | stderr |   warnings.warn(
+2026-08-25 18:37:38 | INFO | stdout | * Running on local URL:  http://0.0.0.0:8000
+2026-08-25 18:37:38 | DEBUG | httpcore.connection | connect_tcp.started host='localhost' port=8000 local_address=None timeout=None socket_options=None
+2026-08-25 18:37:38 | DEBUG | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x795b9235feb0>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_headers.started request=<Request [b'GET']>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_headers.complete
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_body.started request=<Request [b'GET']>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_body.complete
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | receive_response_headers.started request=<Request [b'GET']>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 25 Aug 2026 13:07:38 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2026-08-25 18:37:38 | INFO | httpx | HTTP Request: GET http://localhost:8000/gradio_api/startup-events "HTTP/1.1 200 OK"
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | receive_response_body.started request=<Request [b'GET']>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | receive_response_body.complete
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | response_closed.started
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | response_closed.complete
+2026-08-25 18:37:38 | DEBUG | httpcore.connection | close.started
+2026-08-25 18:37:38 | DEBUG | httpcore.connection | close.complete
+2026-08-25 18:37:38 | DEBUG | httpcore.connection | connect_tcp.started host='localhost' port=8000 local_address=None timeout=3 socket_options=None
+2026-08-25 18:37:38 | DEBUG | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x795b9231ceb0>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_headers.started request=<Request [b'HEAD']>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_headers.complete
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_body.started request=<Request [b'HEAD']>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_body.complete
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | receive_response_headers.started request=<Request [b'HEAD']>
+2026-08-25 18:37:38 | DEBUG | httpcore.connection | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x795b93bddf30>
+2026-08-25 18:37:38 | DEBUG | httpcore.connection | start_tls.started ssl_context=<ssl.SSLContext object at 0x795b9eb6a2c0> server_hostname='api.gradio.app' timeout=3
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Tue, 25 Aug 2026 13:07:38 GMT'), (b'server', b'uvicorn'), (b'content-length', b'39805'), (b'content-type', b'text/html; charset=utf-8')])
+2026-08-25 18:37:38 | INFO | httpx | HTTP Request: HEAD http://localhost:8000/ "HTTP/1.1 200 OK"
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | receive_response_body.started request=<Request [b'HEAD']>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | receive_response_body.complete
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | response_closed.started
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | response_closed.complete
+2026-08-25 18:37:38 | DEBUG | httpcore.connection | close.started
+2026-08-25 18:37:38 | DEBUG | httpcore.connection | close.complete
+2026-08-25 18:37:38 | INFO | stdout | 
+2026-08-25 18:37:38 | INFO | stdout | To create a public link, set `share=True` in `launch()`.
+2026-08-25 18:37:38 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): huggingface.co:443
+2026-08-25 18:37:38 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): huggingface.co:443
+2026-08-25 18:37:38 | DEBUG | urllib3.connectionpool | https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2026-08-25 18:37:38 | DEBUG | urllib3.connectionpool | https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2026-08-25 18:37:38 | DEBUG | urllib3.connectionpool | https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2026-08-25 18:37:38 | DEBUG | urllib3.connectionpool | https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2026-08-25 18:37:38 | DEBUG | httpcore.connection | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x795b93bc3400>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_headers.started request=<Request [b'GET']>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_headers.complete
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_body.started request=<Request [b'GET']>
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | send_request_body.complete
+2026-08-25 18:37:38 | DEBUG | httpcore.http11 | receive_response_headers.started request=<Request [b'GET']>
+2026-08-25 18:37:39 | DEBUG | httpcore.http11 | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 25 Aug 2026 13:07:38 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2026-08-25 18:37:39 | INFO | httpx | HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2026-08-25 18:37:39 | DEBUG | httpcore.http11 | receive_response_body.started request=<Request [b'GET']>
+2026-08-25 18:37:39 | DEBUG | httpcore.http11 | receive_response_body.complete
+2026-08-25 18:37:39 | DEBUG | httpcore.http11 | response_closed.started
+2026-08-25 18:37:39 | DEBUG | httpcore.http11 | response_closed.complete
+2026-08-25 18:37:39 | DEBUG | httpcore.connection | close.started
+2026-08-25 18:37:39 | DEBUG | httpcore.connection | close.complete
+2026-08-25 18:38:46 | INFO | gradio_web_server | load_demo. ip: 127.0.0.1
+2026-08-25 18:38:46 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:38:46 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:38:46 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /refresh_all_workers HTTP/1.1" 200 4
+2026-08-25 18:38:46 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /refresh_all_workers HTTP/1.1" 200 4
+2026-08-25 18:38:46 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:38:46 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:38:46 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /list_models HTTP/1.1" 200 13
+2026-08-25 18:38:46 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /list_models HTTP/1.1" 200 13
+2026-08-25 18:38:46 | INFO | gradio_web_server | Models: []
+2026-08-25 18:38:46 | ERROR | stderr | /DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py:226: UserWarning: The value passed into gr.Dropdown() is not in the list of choices. Please update the list of choices to include:  or set allow_custom_value=True.
+2026-08-25 18:38:46 | ERROR | stderr |   warnings.warn(
+2026-08-25 18:39:15 | ERROR | stderr | [31mERROR[0m:    Exception in ASGI application
+2026-08-25 18:39:15 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 399, in run_asgi
+2026-08-25 18:39:15 | ERROR | stderr |     result = await app(  # type: ignore[func-returns-value]
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     return await self.app(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await super().__call__(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/applications.py", line 113, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await self.middleware_stack(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     raise exc
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await self.app(scope, receive, _send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 790, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await self.app(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2026-08-25 18:39:15 | ERROR | stderr |     raise exc
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+2026-08-25 18:39:15 | ERROR | stderr |     await app(scope, receive, sender)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await self.middleware_stack(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+2026-08-25 18:39:15 | ERROR | stderr |     await route.handle(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+2026-08-25 18:39:15 | ERROR | stderr |     await self.app(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+2026-08-25 18:39:15 | ERROR | stderr |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2026-08-25 18:39:15 | ERROR | stderr |     raise exc
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+2026-08-25 18:39:15 | ERROR | stderr |     await app(scope, receive, sender)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+2026-08-25 18:39:15 | ERROR | stderr |     await response(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/responses.py", line 348, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await self._handle_simple(send, send_header_only)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/responses.py", line 377, in _handle_simple
+2026-08-25 18:39:15 | ERROR | stderr |     await send({"type": "http.response.body", "body": chunk, "more_body": more_body})
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 39, in sender
+2026-08-25 18:39:15 | ERROR | stderr |     await send(message)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 39, in sender
+2026-08-25 18:39:15 | ERROR | stderr |     await send(message)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in _send
+2026-08-25 18:39:15 | ERROR | stderr |     await send(message)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 534, in send
+2026-08-25 18:39:15 | ERROR | stderr |     raise RuntimeError("Response content shorter than Content-Length")
+2026-08-25 18:39:15 | ERROR | stderr | RuntimeError: Response content shorter than Content-Length
+2026-08-25 18:39:15 | ERROR | stderr | [31mERROR[0m:    Exception in ASGI application
+2026-08-25 18:39:15 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 399, in run_asgi
+2026-08-25 18:39:15 | ERROR | stderr |     result = await app(  # type: ignore[func-returns-value]
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     return await self.app(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await super().__call__(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/applications.py", line 113, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await self.middleware_stack(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     raise exc
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await self.app(scope, receive, _send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 790, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await self.app(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2026-08-25 18:39:15 | ERROR | stderr |     raise exc
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+2026-08-25 18:39:15 | ERROR | stderr |     await app(scope, receive, sender)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await self.middleware_stack(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+2026-08-25 18:39:15 | ERROR | stderr |     await route.handle(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+2026-08-25 18:39:15 | ERROR | stderr |     await self.app(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+2026-08-25 18:39:15 | ERROR | stderr |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2026-08-25 18:39:15 | ERROR | stderr |     raise exc
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+2026-08-25 18:39:15 | ERROR | stderr |     await app(scope, receive, sender)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+2026-08-25 18:39:15 | ERROR | stderr |     await response(scope, receive, send)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/responses.py", line 348, in __call__
+2026-08-25 18:39:15 | ERROR | stderr |     await self._handle_simple(send, send_header_only)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/responses.py", line 377, in _handle_simple
+2026-08-25 18:39:15 | ERROR | stderr |     await send({"type": "http.response.body", "body": chunk, "more_body": more_body})
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 39, in sender
+2026-08-25 18:39:15 | ERROR | stderr |     await send(message)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 39, in sender
+2026-08-25 18:39:15 | ERROR | stderr |     await send(message)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in _send
+2026-08-25 18:39:15 | ERROR | stderr |     await send(message)
+2026-08-25 18:39:15 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 534, in send
+2026-08-25 18:39:15 | ERROR | stderr |     raise RuntimeError("Response content shorter than Content-Length")
+2026-08-25 18:39:15 | ERROR | stderr | RuntimeError: Response content shorter than Content-Length
+2026-08-25 18:39:21 | INFO | gradio_web_server | load_demo. ip: 127.0.0.1
+2026-08-25 18:39:21 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:39:21 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:39:21 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /refresh_all_workers HTTP/1.1" 200 4
+2026-08-25 18:39:21 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /refresh_all_workers HTTP/1.1" 200 4
+2026-08-25 18:39:21 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:39:21 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:39:21 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /list_models HTTP/1.1" 200 13
+2026-08-25 18:39:21 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /list_models HTTP/1.1" 200 13
+2026-08-25 18:39:21 | INFO | gradio_web_server | Models: []
+2026-08-25 18:39:37 | ERROR | stderr | [31mERROR[0m:    Exception in ASGI application
+2026-08-25 18:39:37 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 399, in run_asgi
+2026-08-25 18:39:37 | ERROR | stderr |     result = await app(  # type: ignore[func-returns-value]
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+2026-08-25 18:39:37 | ERROR | stderr |     return await self.app(scope, receive, send)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+2026-08-25 18:39:37 | ERROR | stderr |     await super().__call__(scope, receive, send)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/applications.py", line 113, in __call__
+2026-08-25 18:39:37 | ERROR | stderr |     await self.middleware_stack(scope, receive, send)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/errors.py", line 187, in __call__
+2026-08-25 18:39:37 | ERROR | stderr |     raise exc
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/errors.py", line 165, in __call__
+2026-08-25 18:39:37 | ERROR | stderr |     await self.app(scope, receive, _send)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 790, in __call__
+2026-08-25 18:39:37 | ERROR | stderr |     await self.app(scope, receive, send)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+2026-08-25 18:39:37 | ERROR | stderr |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2026-08-25 18:39:37 | ERROR | stderr |     raise exc
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+2026-08-25 18:39:37 | ERROR | stderr |     await app(scope, receive, sender)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 715, in __call__
+2026-08-25 18:39:37 | ERROR | stderr |     await self.middleware_stack(scope, receive, send)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 735, in app
+2026-08-25 18:39:37 | ERROR | stderr |     await route.handle(scope, receive, send)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 288, in handle
+2026-08-25 18:39:37 | ERROR | stderr |     await self.app(scope, receive, send)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 76, in app
+2026-08-25 18:39:37 | ERROR | stderr |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+2026-08-25 18:39:37 | ERROR | stderr |     raise exc
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+2026-08-25 18:39:37 | ERROR | stderr |     await app(scope, receive, sender)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/routing.py", line 74, in app
+2026-08-25 18:39:37 | ERROR | stderr |     await response(scope, receive, send)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/responses.py", line 348, in __call__
+2026-08-25 18:39:37 | ERROR | stderr |     await self._handle_simple(send, send_header_only)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/responses.py", line 377, in _handle_simple
+2026-08-25 18:39:37 | ERROR | stderr |     await send({"type": "http.response.body", "body": chunk, "more_body": more_body})
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 39, in sender
+2026-08-25 18:39:37 | ERROR | stderr |     await send(message)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/_exception_handler.py", line 39, in sender
+2026-08-25 18:39:37 | ERROR | stderr |     await send(message)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/starlette/middleware/errors.py", line 162, in _send
+2026-08-25 18:39:37 | ERROR | stderr |     await send(message)
+2026-08-25 18:39:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 534, in send
+2026-08-25 18:39:37 | ERROR | stderr |     raise RuntimeError("Response content shorter than Content-Length")
+2026-08-25 18:39:37 | ERROR | stderr | RuntimeError: Response content shorter than Content-Length
+2026-08-25 18:39:45 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:39:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/queueing.py", line 624, in process_events
+2026-08-25 18:39:45 | ERROR | stderr |     response = await route_utils.call_process_api(
+2026-08-25 18:39:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 323, in call_process_api
+2026-08-25 18:39:45 | ERROR | stderr |     output = await app.get_blocks().process_api(
+2026-08-25 18:39:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 2014, in process_api
+2026-08-25 18:39:45 | ERROR | stderr |     inputs = await self.preprocess_data(
+2026-08-25 18:39:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 1709, in preprocess_data
+2026-08-25 18:39:45 | ERROR | stderr |     processed_input.append(block.preprocess(inputs_cached))
+2026-08-25 18:39:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py", line 202, in preprocess
+2026-08-25 18:39:45 | ERROR | stderr |     raise Error(
+2026-08-25 18:39:45 | ERROR | stderr | gradio.exceptions.Error: 'Value:  is not in the list of choices: []'
+2026-08-25 18:39:51 | INFO | gradio_web_server | load_demo. ip: 127.0.0.1
+2026-08-25 18:39:51 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:39:51 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:39:51 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /refresh_all_workers HTTP/1.1" 200 4
+2026-08-25 18:39:51 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /refresh_all_workers HTTP/1.1" 200 4
+2026-08-25 18:39:51 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:39:51 | DEBUG | urllib3.connectionpool | Starting new HTTP connection (1): localhost:10000
+2026-08-25 18:39:51 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /list_models HTTP/1.1" 200 13
+2026-08-25 18:39:51 | DEBUG | urllib3.connectionpool | http://localhost:10000 "POST /list_models HTTP/1.1" 200 13
+2026-08-25 18:39:51 | INFO | gradio_web_server | Models: []
+2026-08-25 18:40:07 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:40:07 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/queueing.py", line 624, in process_events
+2026-08-25 18:40:07 | ERROR | stderr |     response = await route_utils.call_process_api(
+2026-08-25 18:40:07 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 323, in call_process_api
+2026-08-25 18:40:07 | ERROR | stderr |     output = await app.get_blocks().process_api(
+2026-08-25 18:40:07 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 2014, in process_api
+2026-08-25 18:40:07 | ERROR | stderr |     inputs = await self.preprocess_data(
+2026-08-25 18:40:07 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 1709, in preprocess_data
+2026-08-25 18:40:07 | ERROR | stderr |     processed_input.append(block.preprocess(inputs_cached))
+2026-08-25 18:40:07 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py", line 202, in preprocess
+2026-08-25 18:40:07 | ERROR | stderr |     raise Error(
+2026-08-25 18:40:07 | ERROR | stderr | gradio.exceptions.Error: 'Value:  is not in the list of choices: []'
+2026-08-25 18:40:42 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:40:42 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/queueing.py", line 624, in process_events
+2026-08-25 18:40:42 | ERROR | stderr |     response = await route_utils.call_process_api(
+2026-08-25 18:40:42 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 323, in call_process_api
+2026-08-25 18:40:42 | ERROR | stderr |     output = await app.get_blocks().process_api(
+2026-08-25 18:40:42 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 2014, in process_api
+2026-08-25 18:40:42 | ERROR | stderr |     inputs = await self.preprocess_data(
+2026-08-25 18:40:42 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 1709, in preprocess_data
+2026-08-25 18:40:42 | ERROR | stderr |     processed_input.append(block.preprocess(inputs_cached))
+2026-08-25 18:40:42 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py", line 202, in preprocess
+2026-08-25 18:40:42 | ERROR | stderr |     raise Error(
+2026-08-25 18:40:42 | ERROR | stderr | gradio.exceptions.Error: 'Value:  is not in the list of choices: []'
+2026-08-25 18:40:44 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:40:44 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/queueing.py", line 624, in process_events
+2026-08-25 18:40:44 | ERROR | stderr |     response = await route_utils.call_process_api(
+2026-08-25 18:40:44 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 323, in call_process_api
+2026-08-25 18:40:44 | ERROR | stderr |     output = await app.get_blocks().process_api(
+2026-08-25 18:40:44 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 2014, in process_api
+2026-08-25 18:40:44 | ERROR | stderr |     inputs = await self.preprocess_data(
+2026-08-25 18:40:44 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 1709, in preprocess_data
+2026-08-25 18:40:44 | ERROR | stderr |     processed_input.append(block.preprocess(inputs_cached))
+2026-08-25 18:40:44 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py", line 202, in preprocess
+2026-08-25 18:40:44 | ERROR | stderr |     raise Error(
+2026-08-25 18:40:44 | ERROR | stderr | gradio.exceptions.Error: 'Value:  is not in the list of choices: []'
+2026-08-25 18:40:45 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/queueing.py", line 624, in process_events
+2026-08-25 18:40:45 | ERROR | stderr |     response = await route_utils.call_process_api(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 323, in call_process_api
+2026-08-25 18:40:45 | ERROR | stderr |     output = await app.get_blocks().process_api(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 2014, in process_api
+2026-08-25 18:40:45 | ERROR | stderr |     inputs = await self.preprocess_data(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 1709, in preprocess_data
+2026-08-25 18:40:45 | ERROR | stderr |     processed_input.append(block.preprocess(inputs_cached))
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py", line 202, in preprocess
+2026-08-25 18:40:45 | ERROR | stderr |     raise Error(
+2026-08-25 18:40:45 | ERROR | stderr | gradio.exceptions.Error: 'Value:  is not in the list of choices: []'
+2026-08-25 18:40:45 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/queueing.py", line 624, in process_events
+2026-08-25 18:40:45 | ERROR | stderr |     response = await route_utils.call_process_api(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 323, in call_process_api
+2026-08-25 18:40:45 | ERROR | stderr |     output = await app.get_blocks().process_api(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 2014, in process_api
+2026-08-25 18:40:45 | ERROR | stderr |     inputs = await self.preprocess_data(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 1709, in preprocess_data
+2026-08-25 18:40:45 | ERROR | stderr |     processed_input.append(block.preprocess(inputs_cached))
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py", line 202, in preprocess
+2026-08-25 18:40:45 | ERROR | stderr |     raise Error(
+2026-08-25 18:40:45 | ERROR | stderr | gradio.exceptions.Error: 'Value:  is not in the list of choices: []'
+2026-08-25 18:40:45 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/queueing.py", line 624, in process_events
+2026-08-25 18:40:45 | ERROR | stderr |     response = await route_utils.call_process_api(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 323, in call_process_api
+2026-08-25 18:40:45 | ERROR | stderr |     output = await app.get_blocks().process_api(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 2014, in process_api
+2026-08-25 18:40:45 | ERROR | stderr |     inputs = await self.preprocess_data(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 1709, in preprocess_data
+2026-08-25 18:40:45 | ERROR | stderr |     processed_input.append(block.preprocess(inputs_cached))
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py", line 202, in preprocess
+2026-08-25 18:40:45 | ERROR | stderr |     raise Error(
+2026-08-25 18:40:45 | ERROR | stderr | gradio.exceptions.Error: 'Value:  is not in the list of choices: []'
+2026-08-25 18:40:45 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/queueing.py", line 624, in process_events
+2026-08-25 18:40:45 | ERROR | stderr |     response = await route_utils.call_process_api(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 323, in call_process_api
+2026-08-25 18:40:45 | ERROR | stderr |     output = await app.get_blocks().process_api(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 2014, in process_api
+2026-08-25 18:40:45 | ERROR | stderr |     inputs = await self.preprocess_data(
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 1709, in preprocess_data
+2026-08-25 18:40:45 | ERROR | stderr |     processed_input.append(block.preprocess(inputs_cached))
+2026-08-25 18:40:45 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py", line 202, in preprocess
+2026-08-25 18:40:45 | ERROR | stderr |     raise Error(
+2026-08-25 18:40:45 | ERROR | stderr | gradio.exceptions.Error: 'Value:  is not in the list of choices: []'
+2026-08-25 18:40:58 | INFO | gradio_web_server | clear_history. ip: 127.0.0.1
+2026-08-25 18:41:37 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:41:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/queueing.py", line 624, in process_events
+2026-08-25 18:41:37 | ERROR | stderr |     response = await route_utils.call_process_api(
+2026-08-25 18:41:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 323, in call_process_api
+2026-08-25 18:41:37 | ERROR | stderr |     output = await app.get_blocks().process_api(
+2026-08-25 18:41:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 2014, in process_api
+2026-08-25 18:41:37 | ERROR | stderr |     inputs = await self.preprocess_data(
+2026-08-25 18:41:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 1709, in preprocess_data
+2026-08-25 18:41:37 | ERROR | stderr |     processed_input.append(block.preprocess(inputs_cached))
+2026-08-25 18:41:37 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py", line 202, in preprocess
+2026-08-25 18:41:37 | ERROR | stderr |     raise Error(
+2026-08-25 18:41:37 | ERROR | stderr | gradio.exceptions.Error: 'Value:  is not in the list of choices: []'
+2026-08-25 18:41:55 | ERROR | stderr | Traceback (most recent call last):
+2026-08-25 18:41:55 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/queueing.py", line 624, in process_events
+2026-08-25 18:41:55 | ERROR | stderr |     response = await route_utils.call_process_api(
+2026-08-25 18:41:55 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/route_utils.py", line 323, in call_process_api
+2026-08-25 18:41:55 | ERROR | stderr |     output = await app.get_blocks().process_api(
+2026-08-25 18:41:55 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 2014, in process_api
+2026-08-25 18:41:55 | ERROR | stderr |     inputs = await self.preprocess_data(
+2026-08-25 18:41:55 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/blocks.py", line 1709, in preprocess_data
+2026-08-25 18:41:55 | ERROR | stderr |     processed_input.append(block.preprocess(inputs_cached))
+2026-08-25 18:41:55 | ERROR | stderr |   File "/DATA/hnc/conda_envs/llama-omni2/lib/python3.10/site-packages/gradio/components/dropdown.py", line 202, in preprocess
+2026-08-25 18:41:55 | ERROR | stderr |     raise Error(
+2026-08-25 18:41:55 | ERROR | stderr | gradio.exceptions.Error: 'Value:  is not in the list of choices: []'
+2026-08-25 18:42:13 | INFO | gradio_web_server | clear_history. ip: 127.0.0.1
+2026-08-25 18:43:10 | INFO | stdout | Keyboard interruption in main thread... closing server.

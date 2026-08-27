@@ -1,50 +1,32 @@
-
-REFERENCE_FILE = "/DATA/carer.ai/LLaMA-Omni2-main/medqa_no_noise/transcript_medqa.json"
-MEDQA_DIR = "/DATA/carer.ai/LLaMA-Omni2-main/out"
+REFERENCE_FILE = "/DATA/carer.ai/LLaMA-Omni2-main/medqa_in/samples.json"
+MEDQA_DIR = "/DATA/carer.ai/LLaMA-Omni2-main/medqa_in"
 
 import json
 import os
 import re
 
 
-START = 62
+START = 52
 END = 80
 
-
-# ------------------------------------------------------------
-# Extract answer choice: A / B / C / D / E
-# ------------------------------------------------------------
 
 def extract_answer(text):
     if not text:
         return None
 
-    # Normalize text
     text = text.upper()
-    text = re.sub(r'\s+', ' ', text).strip()
-
-    # ---------------------------------------------------------
-    # Strong patterns - highest priority
-    # ---------------------------------------------------------
+    text = re.sub(r"\s+", " ", text).strip()
 
     patterns = [
-        # "correct answer is D"
-        r'\bCORRECT\s+ANSWER\s+IS\s*[:\-]?\s*\(?([A-E])\)?\b',
+        r"\bCORRECT\s+ANSWER\s+IS\s*[:\-]?\s*\(?([A-E])\)?\b",
+        r"\bTHE\s+ANSWER\s+IS\s*[:\-]?\s*\(?([A-E])\)?\b",
+        r"\bANSWER\s+IS\s*[:\-]?\s*\(?([A-E])\)?\b",
+        r"\bANSWER\s*[:\-]?\s*\(?([A-E])\)?\b",
+        r"\bOPTION\s*[:\-]?\s*\(?([A-E])\)?\b",
+        r"\bCHOICE\s*[:\-]?\s*\(?([A-E])\)?\b",
 
-        # "answer is D"
-        r'\bANSWER\s+IS\s*[:\-]?\s*\(?([A-E])\)?\b',
-
-        # "the answer is D"
-        r'\bTHE\s+ANSWER\s+IS\s*[:\-]?\s*\(?([A-E])\)?\b',
-
-        # "answer D"
-        r'\bANSWER\s*[:\-]?\s*\(?([A-E])\)?\b',
-
-        # "option D"
-        r'\bOPTION\s*[:\-]?\s*\(?([A-E])\)?\b',
-
-        # "choice D"
-        r'\bCHOICE\s*[:\-]?\s*\(?([A-E])\)?\b',
+        # Output starts with: "A, The pathogen..."
+        r"^\s*([A-E])[.,]\s*",
     ]
 
     for pattern in patterns:
@@ -55,9 +37,6 @@ def extract_answer(text):
 
     return None
 
-# ------------------------------------------------------------
-# Load true/reference answers
-# ------------------------------------------------------------
 
 with open(REFERENCE_FILE, "r", encoding="utf-8") as f:
     reference_data = json.load(f)
@@ -67,19 +46,19 @@ correct = 0
 total = 0
 
 
-# ------------------------------------------------------------
-# Evaluate every generated transcript
-# ------------------------------------------------------------
-
 for i in range(START, END + 1):
 
     filename = f"zero_shot_{i}.wav"
 
-    if filename not in reference_data:
-        print(f"[SKIP] Reference missing: {filename}")
+    # Python lists are 0-indexed.
+    reference_index = i - 51
+    
+    if reference_index >= len(reference_data):
+        print(f"[SKIP] Reference missing for {filename}")
         continue
+    reference_item = reference_data[reference_index]
 
-    reference_text = reference_data[filename]
+    reference_answer = reference_item["answer_idx"]
 
     transcript_path = os.path.join(
         MEDQA_DIR,
@@ -96,8 +75,6 @@ for i in range(START, END + 1):
 
     generated_text = transcript_data[0]["text"]
 
-    # Extract A/B/C/D/E
-    reference_answer = extract_answer(reference_text)
     generated_answer = extract_answer(generated_text)
 
     total += 1
@@ -115,10 +92,6 @@ for i in range(START, END + 1):
         f"{result}"
     )
 
-
-# ------------------------------------------------------------
-# Accuracy
-# ------------------------------------------------------------
 
 if total > 0:
 
