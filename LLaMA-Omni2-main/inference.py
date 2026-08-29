@@ -56,7 +56,7 @@ import whisper
 from transformers import AutoTokenizer, AutoConfig, TextIteratorStreamer
 from threading import Thread
 import csv
-from llama_omni2.constants import SPEECH_TOKEN_INDEX, DEFAULT_SPEECH_TOKEN
+from llama_omni2.constants import SPEECH_TOKEN_INDEX, DEFAULT_SPEECH_TOKEN, MCQ_INSTRUCTION
 from llama_omni2.model import *
 from llama_omni2.serve.flow_inference import SpeechDecoder
 
@@ -178,16 +178,18 @@ class OmniModel:
         """
         messages = []
         speech_list = []
-        MCQ_INSTRUCTION = (
-            "Answer the multiple-choice question. "
-            "Output only the correct option letter and answer. "
-            "Provide explanations or reasoning. "
-            "Format: A. answer, explaination. "
-        )
         for i, turn in enumerate(history):
             if i % 3 == 0:
-                messages.append({"role": "user", "content": DEFAULT_SPEECH_TOKEN + "\n" + MCQ_INSTRUCTION})
-                speech_list.append(self.load_speech(turn["content"]["path"]))
+                # `path` may be a list of chunks: whisper's window is 30 s and a MedQA
+                # question runs to ~57 s, so long audio is split and each chunk gets its
+                # own <speech> token in the same user turn. Splicing is handled by
+                # prepare_inputs_labels_for_speech_and_text, one 300-frame block each.
+                paths = turn["content"]["path"]
+                if isinstance(paths, str):
+                    paths = [paths]
+                messages.append({"role": "user",
+                                 "content": DEFAULT_SPEECH_TOKEN * len(paths) + "\n" + MCQ_INSTRUCTION})
+                speech_list.extend(self.load_speech(path) for path in paths)
             elif i % 3 == 1:
                 messages.append({"role": "assistant", "content": turn["content"]})
             else:
@@ -312,7 +314,9 @@ def main():
     parser.add_argument("--prompt-speech", type=str,
                         default="llama_omni2/inference/prompt_en.wav")
     parser.add_argument("--audio", type=str, nargs="+", required=True,
-                        help="One or more input wavs; treated as consecutive turns.")
+                        help="One or more input wavs; treated as consecutive turns. "
+                             "Comma-separate paths to feed several chunks as a single "
+                             "turn, e.g. 'q_00.wav,q_01.wav' for audio over 30 s.")
     parser.add_argument("--out-dir", type=str, default="./out")
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--top-p", type=float, default=0.7)
@@ -337,7 +341,8 @@ def main():
     transcript = []
     for turn_idx, audio_path in enumerate(args.audio):
         start_time = time.time()
-        history.append({"role": "user", "content": {"path": audio_path}})
+        chunks = audio_path.split(",")
+        history.append({"role": "user", "content": {"path": chunks if len(chunks) > 1 else audio_path}})
 
         text, unit_ids = omni.generate(
             history,
